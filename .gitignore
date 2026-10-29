@@ -1,0 +1,34 @@
+# ROS 2 / Colcon generated output
+build/
+install/
+log/
+src/build/
+src/install/
+src/log/
+
+# Python cache
+__pycache__/
+*.py[cod]
+*.egg-info/
+
+# Virtual environments and editors
+.venv/
+venv/
+.vscode/
+.idea/
+captures/
+
+# Editor-generated database
+.vscode/browse.vc.db
+.vscode/
+captures/
+build/
+install/
+log/
+src/build/
+src/install/
+src/log/
+obj2urdf/.git_backup/
+obj2urdf/.git_backup/
+weights/clip/ViT-B-32.pt
+weights/clip/ViT-B-32.pt

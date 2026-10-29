@@ -1,0 +1,48 @@
+[INFO] [launch]: All log files can be found below /home/khalandar-workspace/.ros/log/2026-09-17-17-48-36-438626-khalandar-workspace-LOQ-15IRX9-15042
+[INFO] [launch]: Default logging verbosity is set to INFO
+[INFO] [gz-1]: process started with pid [15046]
+[INFO] [robot_state_publisher-2]: process started with pid [15047]
+[INFO] [parameter_bridge-3]: process started with pid [15048]
+[robot_state_publisher-2] [WARN] [1789647516.606008100] [kdl_parser]: The root link base_link has an inertia specified in the URDF, but KDL does not support a root link with an inertia.  As a workaround, you can add an extra dummy link to your URDF.
+[robot_state_publisher-2] [INFO] [1789647516.606217856] [robot_state_publisher]: Robot initialized
+[parameter_bridge-3] [INFO] [1789647516.640858145] [ros_gz_bridge]: Creating GZ->ROS Bridge: [/camera/camera_info (gz.msgs.CameraInfo) -> /camera/camera_info (sensor_msgs/msg/CameraInfo)] (Lazy 0)
+[parameter_bridge-3] [INFO] [1789647516.644773187] [ros_gz_bridge]: Creating GZ->ROS Bridge: [/camera/image_raw (gz.msgs.Image) -> /camera/image_raw (sensor_msgs/msg/Image)] (Lazy 0)
+[parameter_bridge-3] [INFO] [1789647516.645466929] [ros_gz_bridge]: Creating GZ->ROS Bridge: [/imu/data (gz.msgs.IMU) -> /imu/data (sensor_msgs/msg/Imu)] (Lazy 0)
+[parameter_bridge-3] [INFO] [1789647516.646252799] [ros_gz_bridge]: Creating GZ->ROS Bridge: [/camera/depth_image (gz.msgs.Image) -> /camera/depth_image (sensor_msgs/msg/Image)] (Lazy 0)
+[parameter_bridge-3] [INFO] [1789647516.646617414] [ros_gz_bridge]: Creating GZ->ROS Bridge: [/scan (gz.msgs.LaserScan) -> /scan (sensor_msgs/msg/LaserScan)] (Lazy 0)
+[parameter_bridge-3] [INFO] [1789647516.647167232] [ros_gz_bridge]: Creating GZ->ROS Bridge: [/odom (gz.msgs.Odometry) -> /odom (nav_msgs/msg/Odometry)] (Lazy 0)
+[parameter_bridge-3] [INFO] [1789647516.649411212] [ros_gz_bridge]: Creating GZ->ROS Bridge: [/tf (gz.msgs.Pose_V) -> /tf (tf2_msgs/msg/TFMessage)] (Lazy 0)
+[parameter_bridge-3] [INFO] [1789647516.651802181] [ros_gz_bridge]: Creating GZ->ROS Bridge: [/clock (gz.msgs.Clock) -> /clock (rosgraph_msgs/msg/Clock)] (Lazy 0)
+[parameter_bridge-3] [INFO] [1789647516.653463286] [ros_gz_bridge]: Creating GZ->ROS Bridge: [/joint_states (gz.msgs.Model) -> /joint_states (sensor_msgs/msg/JointState)] (Lazy 0)
+[parameter_bridge-3] [INFO] [1789647516.654288912] [ros_gz_bridge]: Creating ROS->GZ Bridge: [/cmd_vel (geometry_msgs/msg/Twist) -> /cmd_vel (gz.msgs.Twist)] (Lazy 0)
+[INFO] [create-4]: process started with pid [15126]
+[create-4] [INFO] [1789647518.616938330] [ros_gz_sim]: Requesting list of world names.
+[create-4] [INFO] [1789647519.050135443] [ros_gz_sim]: Waiting messages on topic [/robot_description].
+[create-4] [INFO] [1789647519.063794255] [ros_gz_sim]: Entity creation successful.
+[gz-1] [1;33mWarning [Utils.cc:132][0m [/sdf/model[@name="my_robot"]/link[@name="base_link"]/sensor[@name="lidar_sensor"]/frame_id:<urdf-string>:L0]: XML Element[frame_id], child of element[sensor], not defined in SDF. Copying[frame_id] as children of [sensor].
+[gz-1] [1;33mWarning [Utils.cc:132][0m [/sdf/model[@name="my_robot"]/link[@name="base_link"]/sensor[@name="lidar_sensor"]/gz_frame_id:<urdf-string>:L0]: XML Element[gz_frame_id], child of element[sensor], not defined in SDF. Copying[gz_frame_id] as children of [sensor].
+[INFO] [create-4]: process has finished cleanly [pid 15126]
+[gz-1] libEGL warning: pci id for fd 72: 10de:25ec, driver (null)
+[gz-1] 
+[gz-1] pci id for fd 73: 10de:25ec, driver (null)
+[gz-1] pci id for fd 74: 10de:25ec, driver (null)
+[gz-1] libEGL warning: egl: failed to create dri2 screen
+[gz-1] libEGL warning: pci id for fd 72: 10de:25ec, driver (null)
+[gz-1] 
+[gz-1] pci id for fd 73: 10de:25ec, driver (null)
+[gz-1] pci id for fd 74: 10de:25ec, driver (null)
+[gz-1] libEGL warning: egl: failed to create dri2 screen
+[gz-1] libEGL warning: pci id for fd 72: 10de:25ec, driver (null)
+[gz-1] 
+[gz-1] libEGL warning: pci id for fd 115: 10de:25ec, driver (null)
+[gz-1] 
+[gz-1] pci id for fd 116: 10de:25ec, driver (null)
+[gz-1] pci id for fd 117: 10de:25ec, driver (null)
+[gz-1] libEGL warning: egl: failed to create dri2 screen
+[gz-1] libEGL warning: pci id for fd 115: 10de:25ec, driver (null)
+[gz-1] 
+[gz-1] pci id for fd 116: 10de:25ec, driver (null)
+[gz-1] pci id for fd 117: 10de:25ec, driver (null)
+[gz-1] libEGL warning: egl: failed to create dri2 screen
+[gz-1] libEGL warning: pci id for fd 115: 10de:25ec, driver (null)
+[gz-1] 

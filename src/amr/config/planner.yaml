@@ -1,0 +1,14 @@
+planner_server:
+  ros__parameters:
+    frequency: 20.0
+    update_rate: 1.0
+    planner_plugins:
+      -plugin: "GridBased"
+    GridBased:
+      plugin: "nav2_theta_star_planner::ThetaStarPlanner"
+      how_many_corners: 8
+      w_euc_cost: 1.0 #straight line cost
+      w_traversal_cost: 1.0 # curver line cost 
+      use_final_approach_orientation: true  
+      allow_unknown: true
+      

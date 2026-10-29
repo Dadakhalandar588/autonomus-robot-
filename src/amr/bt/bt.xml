@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<root BTCPP_format="4" main_tree_to_execute="MainTree">
+
+    <BehaviorTree ID="MainTree">
+
+        <RecoveryNode number_of_retries="3" name="NavigateRecovery">
+
+            <PipelineSequence name="NavigateWithReplanning">
+
+                <PlannerSelector
+                    selected_planner="{selected_planner}"
+                    default_planner="GridBased"
+                    topic_name="planner_selector"/>
+
+                <ControllerSelector
+                    selected_controller="{selected_controller}"
+                    default_controller="FollowPath"
+                    topic_name="controller_selector"/>
+
+                <RateController hz="1.0">
+
+                    <ComputePathToPose
+                        goal="{goal}"
+                        path="{path}"
+                        planner_id="{selected_planner}"
+                        error_code_id="{compute_path_error_code}"/>
+
+                </RateController>
+
+                <FollowPath
+                    path="{path}"
+                    controller_id="{selected_controller}"
+                    error_code_id="{follow_path_error_code}"/>
+
+            </PipelineSequence>
+
+            <ReactiveFallback name="RecoveryFallback">
+
+                <GoalUpdated/>
+
+                <RoundRobin name="RecoveryActions">
+
+                    <Sequence name="ClearAndBackUp">
+
+                        <ClearEntireCostmap
+                            service_name="local_costmap/clear_entirely_local_costmap"/>
+
+                        <BackUp
+                            backup_dist="0.20"
+                            backup_speed="0.05"/>
+
+                    </Sequence>
+
+                    <Sequence name="ClearAndSpinLeft">
+
+                        <ClearEntireCostmap
+                            service_name="local_costmap/clear_entirely_local_costmap"/>
+
+                        <Spin
+                            spin_dist="1.57"/>
+
+                    </Sequence>
+
+                    <Sequence name="ClearAndSpinRight">
+
+                        <ClearEntireCostmap
+                            service_name="local_costmap/clear_entirely_local_costmap"/>
+
+                        <Spin
+                            spin_dist="-1.57"/>
+
+                    </Sequence>
+
+                    <Wait
+                        wait_duration="5.0"/>
+
+                </RoundRobin>
+
+            </ReactiveFallback>
+
+        </RecoveryNode>
+
+    </BehaviorTree>
+
+</root>

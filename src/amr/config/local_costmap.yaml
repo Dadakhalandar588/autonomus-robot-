@@ -1,0 +1,41 @@
+local_costmap:
+  local_costmap:
+    ros__parameters:
+      use_sim_time: true
+      update_frequency: 10.0
+      publish_frequency: 5.0
+      global_frame: odom
+      robot_base_frame: base_link
+      rolling_window: true
+      transform_tolerance: 1.0
+      initial_transform_timeout: 60.0
+      width: 4
+      height: 4
+      resolution: 0.10
+      robot_radius: 0.20
+
+      plugins:
+        - obstacle_layer
+        - inflation_layer
+
+      obstacle_layer:
+        plugin: "nav2_costmap_2d::ObstacleLayer"
+        enabled: true
+        observation_sources: scan
+
+        scan:
+          topic: /scan
+          data_type: "LaserScan"
+          marking: true
+          clearing: true
+          obstacle_min_range: 0.15
+          obstacle_max_range: 3.0
+          raytrace_min_range: 0.15
+          raytrace_max_range: 3.5
+
+      inflation_layer:
+        plugin: "nav2_costmap_2d::InflationLayer"
+        enabled: true
+        inflation_radius: 0.30
+        cost_scaling_factor: 3.0
+    
